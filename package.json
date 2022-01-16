@@ -1,7 +1,14 @@
 {
-  "name": "mercurius",
-  "version": "9.1.0",
+  "name": "@greguintow/mercurius",
+  "version": "9.1.1",
   "description": "Fastify GraphQL adapter with gateway and subscription support",
+  "keywords": [
+    "graphql",
+    "graphql-jit",
+    "fastify",
+    "fastify-gql",
+    "mercurius"
+  ],
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {

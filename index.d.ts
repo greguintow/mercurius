@@ -425,6 +425,11 @@ export interface MercuriusSchemaOptions {
   schemaTransforms?: ((originalSchema: GraphQLSchema) => GraphQLSchema) | Array<(originalSchema: GraphQLSchema) => GraphQLSchema>;
 }
 
+export interface FormattedResponse {
+  statusCode: number
+  response: ExecutionResult
+}
+
 export interface MercuriusCommonOptions {
   /**
    * Serve GraphiQL on /graphiql if true or 'graphiql' and if routes is true
@@ -474,10 +479,7 @@ export interface MercuriusCommonOptions {
   errorFormatter?: <TContext extends MercuriusContext = MercuriusContext>(
     execution: ExecutionResult,
     context: TContext
-  ) => {
-    statusCode: number;
-    response: ExecutionResult;
-  };
+  ) => FormattedResponse | Promise<FormattedResponse>;
   /**
    * The maximum depth allowed for a single query.
    */
